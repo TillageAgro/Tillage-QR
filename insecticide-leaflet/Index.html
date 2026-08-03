@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insecticide Product Information</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .batch-box { background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    h1 { color: #2e7d32; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Insecticide Product Information</h1>
+    <p>Enter Batch Number or Scan QR Code</p>
+    <input type="text" id="batchInput" placeholder="Enter Batch Number (e.g. ABC12345)" style="width:100%; padding:10px; font-size:16px;">
+    <button onclick="goToBatch()" style="margin-top:10px; padding:10px 20px;">Show Details</button>
+  </div>
+
+  <script>
+    function goToBatch() {
+      const batch = document.getElementById('batchInput').value.trim();
+      if (batch) window.location.href = `/leaflet?batch=${batch}`;
+    }
+  </script>
+</body>
+</html>
